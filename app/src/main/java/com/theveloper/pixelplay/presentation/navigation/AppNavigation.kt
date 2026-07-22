@@ -469,6 +469,15 @@ fun AppNavigation(
                 }
             }
             composable(
+                Screen.UsbAudio.route,
+            ) {
+                ScreenWrapper(navController = navController, playerViewModel = playerViewModel, animatedVisibilityScope = this) {
+                    com.theveloper.pixelplay.presentation.screens.UsbAudioSettingsScreen(
+                        onNavigationIconClick = { navController.popBackStack() }
+                    )
+                }
+            }
+            composable(
                 Screen.NeteaseDashboard.route,
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel, animatedVisibilityScope = this) {
